@@ -1,0 +1,17 @@
+---
+const allPosts = await Astro.glob("./posts/*.mdx");
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+const pageTitle = "My blog";
+import BlogPostListItem from "../components/BlogPostListItem";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>
+    Here I usually describe the things I recently learned or promlems I recently encountered and solutions to them
+  </h2>
+  <p>Blah Blah Blah</p>
+  <ul>
+    {allPosts.map((post) => <BlogPostListItem url={post.url} title={post.frontmatter.title} />)}
+  </ul>
+</BaseLayout>
