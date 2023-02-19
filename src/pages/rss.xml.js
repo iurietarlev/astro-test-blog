@@ -4,7 +4,7 @@ export async function get() {
   return rss({
     title: "Astro Learner | Blog",
     description: "My journey learning Astro",
-    site: "https://my-blog-site.netlify.app",
+    site: "https://cheery-sundae-dea8b4.netlify.app",
     items: await pagesGlobToRssItems(import.meta.glob("./**/*.mdx")),
     customData: `<language>en-us</language>`,
   });
